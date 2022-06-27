@@ -74,8 +74,7 @@ function generatePassword() {
     var randomChar = getRandom(randomList)
     generatedPassword += randomChar
   } 
-
-  console.log(generatedPassword)
+  
   return generatedPassword;
 
 // 4. Display password to the page.
