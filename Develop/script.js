@@ -37,7 +37,7 @@ function generatePassword() {
   var numberList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   var characterList = [" ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
   var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-  var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", " Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 
 // 2. Validate the input.
@@ -61,19 +61,23 @@ function generatePassword() {
     passwordOptions.push(uppercaseList)
   }
 
+  // if no options selected, default to assigning lowercase characters to generated password
+  if (passwordOptions.length === 0) {
+    passwordOptions.push(lowercaseList)
+  }
+
 
   var generatedPassword = ""
 
   for (var i = 0; i < passwordLength; i++) {
     var randomList = getRandom(passwordOptions)
     var randomChar = getRandom(randomList)
+    generatedPassword += randomChar
+  } 
 
-    console.log(randomChar)
-  }
-    
+  console.log(generatedPassword);
 
 // 4. Display password to the page.
-  return "Generated password will go here!";
 }
 
 // Write password to the #password input
