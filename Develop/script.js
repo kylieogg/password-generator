@@ -75,7 +75,8 @@ function generatePassword() {
     generatedPassword += randomChar
   } 
 
-  console.log(generatedPassword);
+  console.log(generatedPassword)
+  return generatedPassword;
 
 // 4. Display password to the page.
 }
