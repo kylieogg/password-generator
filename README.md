@@ -17,4 +17,6 @@ Once the user has answered each prompt and at least one character type is select
 
 # Link to Deployed Application
 
+[Password Generator](https://kylieogg.github.io/password-generator/)
+
 
